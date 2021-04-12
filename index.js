@@ -29,5 +29,9 @@ app.get('/', async (req, res) => {
     console.log("Error");
   }
 })
+
+app.get("/health", (req, res) => {
+  res.status(200).send("healthy")
+})
  
 app.listen(3000)
