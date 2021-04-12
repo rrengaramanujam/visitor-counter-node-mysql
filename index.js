@@ -9,7 +9,7 @@ app.get('/', async (req, res) => {
         id: 1
       }
     })
-    if(currentCount.count >= 1) {
+    if(currentCount) {
       await Visitor.update({
         count: currentCount.count + 1
       },
@@ -22,8 +22,9 @@ app.get('/', async (req, res) => {
       const startCount = await Visitor.create({
         count: 1
       })
+    res.send(`Visitor Count 1`)
     }
-    res.send(`Visitor Count ${currentCount.count}`)
+    res.send(`Visitor Count ${currentCount.count + 1}`)
   } catch (error) {
     console.log("Error");
   }
