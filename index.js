@@ -34,4 +34,4 @@ app.get("/health", (req, res) => {
   res.status(200).send("healthy")
 })
  
-app.listen(3000)
+app.listen(80)
